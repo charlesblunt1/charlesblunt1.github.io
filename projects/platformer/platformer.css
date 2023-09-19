@@ -1,9 +1,10 @@
 body {
   margin: 0px;
+  background-image: url(https://png.pngtree.com/background/20230618/original/pngtree-seamless-loop-background-abstract-neon-party-80s-retro-wave-in-3d-picture-image_3754586.jpg);
 }
 
 canvas {
-  background-color: lightgray;
+  background-image: url(https://png.pngtree.com/background/20230618/original/pngtree-seamless-loop-background-abstract-neon-party-80s-retro-wave-in-3d-picture-image_3754586.jpg);
 }
 
 img {

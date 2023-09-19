@@ -411,7 +411,7 @@ function playerFrictionAndGravity() {
 
 function drawPlatforms() {
   for (var i = 0; i < platforms.length; i++) {
-    ctx.fillStyle = "grey";
+    ctx.fillStyle = 'purple';
     ctx.fillRect(
       platforms[i].x,
       platforms[i].y,
@@ -539,7 +539,7 @@ function createCannon(
       rotation: 180,
       projectileCountdown: 0,
       location: wallLocation,
-      timeBetweenShots: timeBetweenShots / (1000 / frameRate),
+      timeBetweenShots: timeBetweenShots / (700 / frameRate),
       projectileWidth: width,
       projectileHeight: height,
     });
@@ -550,7 +550,7 @@ function createCannon(
       rotation: 0,
       projectileCountdown: 0,
       location: wallLocation,
-      timeBetweenShots: timeBetweenShots / (1000 / frameRate),
+      timeBetweenShots: timeBetweenShots / (700 / frameRate),
       projectileWidth: width,
       projectileHeight: height,
     });
@@ -561,7 +561,7 @@ function createCannon(
       rotation: 90,
       projectileCountdown: 0,
       location: wallLocation,
-      timeBetweenShots: timeBetweenShots / (1000 / frameRate),
+      timeBetweenShots: timeBetweenShots / (700 / frameRate),
       projectileWidth: width,
       projectileHeight: height,
     });
@@ -572,14 +572,14 @@ function createCannon(
       rotation: 270,
       projectileCountdown: 0,
       location: wallLocation,
-      timeBetweenShots: timeBetweenShots / (1000 / frameRate),
+      timeBetweenShots: timeBetweenShots / (700 / frameRate),
       projectileWidth: width,
       projectileHeight: height,
     });
   }
 }
 
-function createCollectable(type, x, y, gravity = 0.1, bounce = 1) {
+function createCollectable(type, x, y, gravity = 0.1, bounce = 100) {
   if (type !== "") {
     var img = document.createElement("img"); // this is not necessary; we could simply make a single element for each collectable type in the HTML instead
     img.src = collectableList[type].image;
@@ -623,7 +623,7 @@ function createProjectile(wallLocation, x, y, width, height) {
     });
   } else if (wallLocation === "left") {
     projectiles.push({
-      x: x - 80 - width / 2,
+      x: x - 200 - width / 2,
       y: y + 46,
       speedX: projectileSpeed,
       speedY: 0,
@@ -642,9 +642,9 @@ function createProjectile(wallLocation, x, y, width, height) {
   }
 
   // putting this here instead of in every if
-  projectiles[projectiles.length - 1].x -= (width - defaultProjectileWidth) / 2;
-  projectiles[projectiles.length - 1].y -=
-    (height - defaultProjectileHeight) / 2;
+  projectiles[projectiles.length - 10].x -= (width - defaultProjectileWidth) / 2;
+  projectiles[projectiles.length - 10].y -=
+    (height - defaultProjectileHeight) / 5;
 }
 
 function keyboardControlActions() {
